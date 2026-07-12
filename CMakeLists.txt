@@ -10,5 +10,5 @@ include(Dependencies)   # Resolve external package dependencies
 include(ProjectOptionsInterface)    # onfigure compiler options and standards
 
 # Add subdirectory build targets
-add_subdirectory(src)
+add_subdirectory(core)
 add_subdirectory(tests)
