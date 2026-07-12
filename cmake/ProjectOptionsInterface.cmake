@@ -1,3 +1,4 @@
+# Common project settings using interface pattern
 add_library(project_options INTERFACE)
 
 #-----------------------------------------------------------
@@ -28,7 +29,7 @@ else()
     )
 endif()
 
-# Linking common project dependencies
+# ropagate common dependencies to all consumers
 target_link_libraries(project_options
     INTERFACE
         fmt::fmt
