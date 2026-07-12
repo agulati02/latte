@@ -1,13 +1,7 @@
-#include <fmt/format.h>
-#include <string>
+#include <latte_cli.hpp>
 
-int main() {
+int main(int argc, char **argv) {
 
-    int port = 8080;
+    return run(argc, argv);
 
-    std::string msg = fmt::format("Listening on port {}", port);
-
-    fmt::print("{}\n", msg);
-
-    return 0;
 }
