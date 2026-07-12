@@ -1,3 +1,4 @@
+#include <string>
 #include <commands/grind.hpp>
 
 void register_grind(CLI::App& app) {
@@ -11,6 +12,7 @@ void register_grind(CLI::App& app) {
     grind->add_option("model_name", opts->model_name, "Model identifier")->required();
 
     grind->callback([opts]() {
-        // opts->model_name is valid here
+        // TODO Delegate execution to grind module
+        std::cout << "Model to grind: " << opts->model_name << std::endl;
     });
 }
