@@ -7,7 +7,7 @@ file(GLOB_RECURSE latte_SOURCES CONFIGURE_DEPENDS
     "${CMAKE_CURRENT_SOURCE_DIR}/*.inl"
 )
 
-# Add src/ to compiler's header search path
+# Add core/ to compiler's header search path
 target_include_directories(latte PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
 
 # Add target sources
