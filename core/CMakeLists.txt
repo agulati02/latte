@@ -17,4 +17,5 @@ target_sources(latte PRIVATE ${latte_SOURCES})
 target_link_libraries(latte
     PRIVATE
         project_options
+        latte_cli
 )
