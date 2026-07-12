@@ -13,3 +13,6 @@ include(ProjectOptionsInterface)    # onfigure compiler options and standards
 add_subdirectory(cli)
 add_subdirectory(core)
 add_subdirectory(tests)
+
+# Make the project installable
+install(TARGETS latte RUNTIME DESTINATION bin)
