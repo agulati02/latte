@@ -33,4 +33,5 @@ endif()
 target_link_libraries(project_options
     INTERFACE
         fmt::fmt
+        spdlog::spdlog
 )

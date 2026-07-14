@@ -6,6 +6,7 @@
         "fmt",
         "cli11",
         "cpr",
-        "nlohmann-json"
+        "nlohmann-json",
+        "spdlog"
     ]
 }
