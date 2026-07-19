@@ -16,4 +16,5 @@ target_link_libraries(latte_cli
         project_options
         CLI11::CLI11
         latte_grind
+        latte_sandbox
 )

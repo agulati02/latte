@@ -16,5 +16,4 @@ target_link_libraries(latte_grind
         project_options
         cpr::cpr
         nlohmann_json::nlohmann_json
-        latte_sandbox
 )

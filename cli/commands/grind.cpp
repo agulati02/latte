@@ -1,6 +1,8 @@
 #include <string>
 #include <commands/grind.hpp>
 #include <compiler/grind.hpp>
+#include <compiler/importer_client.hpp>
+#include <sandbox/sandbox_factory.hpp>
 
 void register_grind(CLI::App& app) {
     struct Options {
@@ -13,8 +15,10 @@ void register_grind(CLI::App& app) {
     cmd->add_option("model_name", opts->model_name, "Model identifier; used to fetch from HuggingFace")->required();
 
     cmd->callback([opts]() {
-        // Delegate execution to grind module
-        auto model_grinder = std::make_unique<grind::ModelGrinder>(); 
-        model_grinder->compile(opts->model_name);
+        auto importer = std::make_unique<compiler::ImporterClient>(
+            sandbox::SandboxFactory::create()
+        );
+        grind::ModelGrinder grinder(std::move(importer));
+        grinder.compile(opts->model_name);
     });
 }

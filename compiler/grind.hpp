@@ -1,21 +1,16 @@
 #pragma once
 
+#include <memory>
 #include <string>
-#include <sandbox/sandbox_factory.hpp>
-
-#include "importer_client.hpp"
+#include <compiler/importer_client.hpp>
 
 namespace grind {
 
 class ModelGrinder {
 
 public:
-    explicit ModelGrinder()
-        : m_importer(
-            std::make_unique<compiler::ImporterClient>(
-                sandbox::SandboxFactory::create()
-            )
-        ) {}
+    explicit ModelGrinder(std::unique_ptr<compiler::ImporterClient> importer)
+        : m_importer(std::move(importer)) {}
 
     // Source-agnostic driver function
     void compile(std::string& model_name);
