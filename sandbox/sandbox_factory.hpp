@@ -1,7 +1,7 @@
 #pragma once
 
-#include "sandbox.hpp"
-#include "podman/podman_sandbox.hpp"
+#include <sandbox/sandbox.hpp>
+#include <sandbox/podman/podman_sandbox.hpp>
 
 namespace sandbox {
 

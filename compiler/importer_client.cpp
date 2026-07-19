@@ -2,7 +2,7 @@
 #include <spdlog/sinks/stdout_color_sinks.h>
 #include <sandbox/sandbox.hpp>
 
-#include "importer_client.hpp"
+#include <compiler/importer_client.hpp>
 
 namespace compiler {
 
