@@ -1,6 +1,6 @@
 #include <string>
 #include <commands/grind.hpp>
-#include <grind/grind.hpp>
+#include <compiler/grind.hpp>
 
 void register_grind(CLI::App& app) {
     struct Options {
@@ -14,6 +14,7 @@ void register_grind(CLI::App& app) {
 
     cmd->callback([opts]() {
         // Delegate execution to grind module
-        grind::execute(opts->model_name);
+        auto model_grinder = std::make_unique<grind::ModelGrinder>(); 
+        model_grinder->compile(opts->model_name);
     });
 }
