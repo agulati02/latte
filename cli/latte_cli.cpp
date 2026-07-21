@@ -1,14 +1,16 @@
 #include <latte_cli.hpp>
 #include <CLI/CLI.hpp>
+#include <commands/grind.hpp>
 
 int run(int argc, char **argv) {
 
-    CLI::App app;
+    CLI::App app("LattE - LLM Runtime Environment");
+    app.require_subcommand();
 
-    // CLI parsing happens here
+    // register subcommands
+    register_grind(app);
 
     CLI11_PARSE(app, argc, argv);
-
     return 0;
 
 }
