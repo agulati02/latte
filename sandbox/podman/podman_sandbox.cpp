@@ -8,6 +8,7 @@
 
 namespace asio = boost::asio;
 namespace bp = boost::process::v2;
+namespace bpenv = bp::environment;
 
 namespace sandbox {
 
@@ -15,7 +16,6 @@ std::unique_ptr<SandboxProcess> PodmanSandbox::run(const SandboxConfig& config)
 {
     spdlog::info("[PodmanSandbox::run] Launching container image '{}'", config.image);
 
-    namespace bpenv = bp::environment;
     auto podman_exe = bpenv::find_executable("podman");
     if (podman_exe.empty()) {
         throw std::runtime_error("podman executable not found in PATH");
