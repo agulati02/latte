@@ -12,10 +12,12 @@ void ImporterClient::fetch(const std::string& model_id)
     spdlog::info("[ImporterClient::fetch] Fetching model_id = {}", model_id);
     
     sandbox::SandboxConfig config {
-        .image = "qwen-qwen3-0-6b.latte"
+        .image = "latte-roaster:latest"
     };
-    
-    m_sandbox->run(config);
+
+    int exit_code = m_sandbox->run(config)->wait();
+
+    spdlog::info("[ImporterClient::fetch] Model grind process exited with status code {}", exit_code);
 }
 
 }
