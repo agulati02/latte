@@ -12,7 +12,10 @@ void ImporterClient::fetch(const std::string& model_id)
     spdlog::info("[ImporterClient::fetch] Fetching model_id = {}", model_id);
     
     sandbox::SandboxConfig config {
-        .image = "latte-roaster:latest"
+        .image = "latte-roaster:latest",
+        .env = std::map<std::string, std::string>{
+            {"MODEL_ID", model_id}
+        }
     };
 
     int exit_code = m_sandbox->run(config)->wait();

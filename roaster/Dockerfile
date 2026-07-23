@@ -2,6 +2,8 @@ FROM python:3.12-slim
 
 WORKDIR /app
 
-COPY main.py .
+COPY . .
 
-CMD ["python", "main.py"]
+RUN pip install -e .
+
+ENTRYPOINT ["python", "-m", "latte_roaster"]

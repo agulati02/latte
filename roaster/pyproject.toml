@@ -1,0 +1,13 @@
+[project]
+name = "latte-roaster"
+version = "0.1.0"
+
+dependencies = [
+    "torch",
+    "transformers",
+    "huggingface_hub",
+    "safetensors",
+    "python-dotenv",
+    "pydantic",
+    "pydantic-settings"
+]

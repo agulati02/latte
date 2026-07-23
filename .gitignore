@@ -70,3 +70,6 @@ Testing/
 
 # VS Code
 .vscode/
+
+*.egg-info/
+.venv/
